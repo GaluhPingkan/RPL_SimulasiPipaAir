@@ -30,7 +30,7 @@ public class HalamanUtama_DenahGedung extends JFrame {
     private static final int FRAME_H = 500;
     private static final int FRAME_X = 150;
     private static final int FRAME_Y = 150;
-    private JButton next, prev,ok;
+    private JButton next, prev, ok;
     private JLabel my_pict;
 //    private  Container content;
     private ListNode pointerN;
@@ -46,8 +46,6 @@ public class HalamanUtama_DenahGedung extends JFrame {
         list.addFirst(new Picture_List("gambar 2 part2"));
         list.addFirst(new Picture_List("gambar 3 part3"));
         list.addFirst(new Picture_List("gambar 4 part4"));
-        
-       
 
         HalamanUtama_DenahGedung gal = new HalamanUtama_DenahGedung();
         gal.inputData(list);
@@ -85,9 +83,8 @@ public class HalamanUtama_DenahGedung extends JFrame {
 //        my_pict.setBounds(365, 70, 650, 550);
         Panel2.add(my_pict);
 
-       
         next = new JButton(">>>");
-        ok = new JButton ("Ok");
+        ok = new JButton("Ok");
         prev = new JButton("<<<");
 
         HalamanUtama_Action_Perfomed();
@@ -97,6 +94,7 @@ public class HalamanUtama_DenahGedung extends JFrame {
 
         content.add(Panel, BorderLayout.SOUTH);
         content.add(Panel2, BorderLayout.CENTER);
+        
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
@@ -165,7 +163,17 @@ public class HalamanUtama_DenahGedung extends JFrame {
                 }
             }
         });
-       
+        ok.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (e.getSource() == ok) {
+                   HalamanTampilan tamp = new HalamanTampilan();
+                   tamp.setVisible(true);
+                }
+
+            }
+        });
+
     }
 
     @Override
